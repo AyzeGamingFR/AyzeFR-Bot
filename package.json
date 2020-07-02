@@ -1,0 +1,27 @@
+{
+  "name": "ayze-bot",
+  "version": "1.0.0",
+  "description": "This is the Official Discord Bot of AyzeFR",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "ù"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/AyzeGamingFR/AyzeFR-Bot"
+  },
+  "keywords": [
+    "AyzeFR",
+    "AyzeFRBot",
+    "Bot",
+    "Discord",
+    "DiscordBot"
+  ],
+  "author": "AyzeFR#4168",
+  "license": "ISC"
+}
