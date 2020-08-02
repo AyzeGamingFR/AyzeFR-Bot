@@ -30,7 +30,7 @@ bot.on('ready', () => {
 		botReadEmbed.setColor("#")
 		botReadEmbed.setAuthor({"name": "",
 "id": "533016846031650826"})
-		botReadEmbed.setTitle("**I am ready to work !**")
+		botReadEmbed.setTitle(`**I am ready to work as ${bot.user.tag} !**`)
 		botReadEmbed.addField(`I was started the ${botStartedDay}:${botStartedMonth}:${botStartedYear} at ${botStartedHour}:${botStartedMinute}:${botStartedSecond}:${botStartedMillisecond} !`)
 	
 	msg.channel({"name": "📰ayzefrbot-logs",
