@@ -10,8 +10,8 @@ var url = require("url");
 // default datas
 
 var commandsFile = require("./commands/commands.js");
-	var helpMessageEmbed = require(commandsFile.helpMessagesFile);
-	var helpPmMessageEmbed = require(commandsFile.helpMessageFile.helpPmMessageEmbed);
+	var helpMessageEmbed = require(commandsFile.helpMessagesFile.helpMessageEmbed);
+	var helpPmMessageEmbed = require(commandsFile.helpMessagesFile.helpPmMessageEmbed);
 	
 // default functions
 
