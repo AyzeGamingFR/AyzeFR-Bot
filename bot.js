@@ -11,13 +11,13 @@ var url = require("url");
 
 var bot = new Discord.Client();
 
-var botStartedYear = Date.getYear();
-var botStartedMonth = Date.getMonth();
-var botStartedDay = Date.getDay();
-var botStartedHour = Date.getHours();
-var botStartedMinute = Date.getMinutes();
-var botStartedSecond = Date.getSecond();
-var botStartedMillisecond = Date.getMillisecond();
+var botStartedYear = new Date.getYear();
+var botStartedMonth = new Date.getMonth();
+var botStartedDay = new Date.getDay();
+var botStartedHour = new Date.getHours();
+var botStartedMinute = new Date.getMinutes();
+var botStartedSecond = new Date.getSecond();
+var botStartedMillisecond = new Date.getMillisecond();
 
 
 // bot.on('ready', ())
