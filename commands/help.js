@@ -5,12 +5,12 @@ var discord = require("discord.js");
 
 // help embeds
 
-var helpMessageEmbed = new Discord.RichEmbed()
+var helpMessageEmbed = new discord.RichEmbed()
   helpMessageEmbed.setColor("#")
   helpMessageEmbed.setTitle("**Help Page :**")
   helpMessageEmbed.addField("")
   
-var helpPmMessageEmbed = new Discord.RichEmbed()
+var helpPmMessageEmbed = new discord.RichEmbed()
   helpPmMessageEmbed.setColor("#")
   helpPmMessageEmbed.setTitle("")
   helpPmMessageEmbed.addField("")
