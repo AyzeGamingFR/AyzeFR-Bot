@@ -56,6 +56,8 @@ bot.on("message", msg => {
 			helpMessageEmbed.setTitle("**Help Page :**")
 			helpMessageEmbed.addField("")
 		
+		msg.channel.send(helpMessageEmbed)
+		
 	}
 	
 	if (msg.content === botPrefix +"helppm") {
@@ -64,6 +66,8 @@ bot.on("message", msg => {
 			helpPmEmbedMessage.setColor("#")
 			helpPmEmbedMessage.setTitle("")
 			helpPmEmbedMessage.addField(``)
+		
+		msg.member.send(helpPmEmbedMessage)
 		
 	}
 	
