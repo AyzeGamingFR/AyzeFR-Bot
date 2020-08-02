@@ -7,6 +7,11 @@ var http = require("http");
 var url = require("url");
 
 
+// default datas
+
+var commandsFile = require("./commands/commands.js");
+	var helpMessageEmbed = require(commandsFile.helpMessagesFile.helpMessageEmbed);
+	
 // default functions
 
 var bot = new Discord.Client();
@@ -48,13 +53,6 @@ bot.on("guildMemberAdd", () => {
 bot.on("message", msg => {
 	
 	if (msg.content === botPrefix +"help") {
-		
-		var helpMessageEmbed = new Discord.RichEmbed()
-			helpMessageEmbed.setColor("#")
-			helpMessageEmbed.setAuthor({"name": "AyzeFR",
-"id": "533016846031650826"})
-			helpMessageEmbed.setTitle("**Help Page :**")
-			helpMessageEmbed.addField("")
 		
 		msg.channel.send(helpMessageEmbed)
 		
