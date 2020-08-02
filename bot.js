@@ -38,6 +38,13 @@ bot.on('ready', () => {
 	
 });
 
+bot.on("guildMemberAdd", () => {
+	
+	console.log(`The user ${user.name} joined the discord server ${guild.name} the ${Date.getDay}:${Date.getMonth}:${Date.getYear} at ${Date.getHour}:${Date.getMinute}:${Date.getSecond}:${Date.getMillisecond} !`)
+	msg.channel.send(`The user ${user.name} joined the server !\nWe are now ${guild.members.memberCount} members.`)
+	
+});
+
 bot.on("message", msg => {
 	
 	if (msg.content === botPrefix +"help") {
