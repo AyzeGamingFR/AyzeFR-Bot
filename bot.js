@@ -1,6 +1,6 @@
 // dependancies
 
-var Discord = require("discord.js");
+var discord = require("discord.js");
 var fs = require("fs");
 
 var http = require("http");
@@ -11,10 +11,11 @@ var url = require("url");
 
 var commandsFile = require("./commands/commands.js");
 	var helpMessageEmbed = require(commandsFile.helpMessagesFile.helpMessageEmbed);
+	var helpPmMessageEmbed = require(commandsFile.helpMessageFile.helpPmMessageEmbed);
 	
 // default functions
 
-var bot = new Discord.Client();
+var bot = new discord.Client();
 
 var botStartedYear = new Date.getYear();
 var botStartedMonth = new Date.getMonth();
@@ -59,11 +60,6 @@ bot.on("message", msg => {
 	}
 	
 	if (msg.content === botPrefix +"helppm") {
-		
-		var helpPmEmbedMessage = new Discord.RichEmbed()
-			helpPmEmbedMessage.setColor("#")
-			helpPmEmbedMessage.setTitle("")
-			helpPmEmbedMessage.addField(``)
 		
 		msg.member.send(helpPmEmbedMessage)
 		
