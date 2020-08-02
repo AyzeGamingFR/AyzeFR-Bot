@@ -58,6 +58,15 @@ bot.on("message", msg => {
 		
 	}
 	
+	if (msg.content === botPrefix +"helppm") {
+		
+		var helpPmEmbedMessage = new Discord.RichEmbed()
+			helpPmEmbedMessage.setColor("#")
+			helpPmEmbedMessage.setTitle("")
+			helpPmEmbedMessage.addField(``)
+		
+	}
+	
 });
 
 bot.login(botToken);
