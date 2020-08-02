@@ -1,26 +1,16 @@
 // default requirements
 
 var discord = require("discord.js");
-var fs = require("fs");
 
 
-// default bot datas
+// help embeds
 
-var botPrefix = "ù";
+var helpMessageEmbed = new Discord.RichEmbed()
+  helpMessageEmbed.setColor("#")
+  helpMessageEmbed.setTitle("**Help Page :**")
+  helpMessageEmbed.addField("")
 
-
-// bot.on("message", msg => {})
-
-bot.on("message", msg => {
-  
-  if (msg.content.startsWith === botPrefix +"help") {
-    
-    if (msg.author.bot) {
-      
-      msg.channel.send(`You can't execute this command ${msg.author} because you are a bot.`)
-      
-    }
-    
-  }
-  
-});
+var helpPmMessageEmbed = new Discord.RichEmbed()
+  helpPmMessageEmbed.setColor("#")
+  helpPmMessageEmbed.setTitle("")
+  helpPmMessageEmbed.addField("")
