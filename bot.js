@@ -12,6 +12,8 @@ var url = require("url");
 var commandsFile = require("./commands/commands.js");
 	var helpMessageEmbed = require(commandsFile.helpMessagesFile.helpMessageEmbed);
 	var helpPmMessageEmbed = require(commandsFile.helpMessagesFile.helpPmMessageEmbed);
+	var staffListEmbed = require(commandsFile.helpMessagesFile.staffListMessageEmbed);
+	var staffListPmEmbed = require(commandsFile.helpMessagesFile.staffListPmMessageEmbed);
 	
 // default functions
 
@@ -61,7 +63,19 @@ bot.on("message", msg => {
 	
 	if (msg.content === botPrefix +"helppm") {
 		
-		msg.member.send(helpPmEmbedMessage)
+		msg.member.send(helpPmEmbed)
+		
+	}
+	
+	if (msg.content === botPrefix +"stafflist") {
+		
+		msg.channel.send(staffListEmbed)
+		
+	}
+	
+	if (msg.content === botPrefix +"stafflistpm") {
+		
+		msg.channel.send(staffListPmEmbed)
 		
 	}
 	
