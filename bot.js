@@ -19,14 +19,6 @@ var commandsFile = require("./commands/commands.js");
 
 var bot = new discord.Client();
 
-var botStartedYear = new Date.getYear();
-var botStartedMonth = new Date.getMonth();
-var botStartedDay = new Date.getDay();
-var botStartedHour = new Date.getHours();
-var botStartedMinute = new Date.getMinutes();
-var botStartedSecond = new Date.getSecond();
-var botStartedMillisecond = new Date.getMillisecond();
-
 
 // bot.on('ready', ())
 
