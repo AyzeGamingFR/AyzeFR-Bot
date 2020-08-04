@@ -1,76 +1,67 @@
-// dependancies
-
-var discord = require("discord.js");
+var Discord = require("discord.js");
+var bot = new Discord.Client();
 var fs = require("fs");
 
-var http = require("http");
-var url = require("url");
+
+var botPrefix = "ù";
 
 
-// default datas
+bot.on("ready", () => {
 
-var commandsFile = require("./commands/commands.js");
-	var helpMessageEmbed = require(commandsFile.helpMessagesFile.helpMessageEmbed);
-	var helpPmMessageEmbed = require(commandsFile.helpMessagesFile.helpPmMessageEmbed);
-	var staffListEmbed = require(commandsFile.helpMessagesFile.staffListMessageEmbed);
-	var staffListPmEmbed = require(commandsFile.helpMessagesFile.staffListPmMessageEmbed);
-	
-// default functions
+    console.log(`I was been started as ${bot.user.tag} ( ${bot.user.id} )!`)
 
-var bot = new discord.Client();
+    bot.user.setPresence("do not disturb")
+    bot.user.setActivity("AyzeFR Bot, ùhelp")
 
-
-// bot.on('ready', ())
-
-bot.on('ready', () => {
-	
-	console.log("");
-	
-	var botReadEmbed = new Discord.RichEmbed()
-		botReadEmbed.setColor("#")
-		botReadEmbed.setAuthor({"name": "",
-"id": "533016846031650826"})
-		botReadEmbed.setTitle(`**I am ready to work as ${bot.user.tag} !**`)
-		botReadEmbed.addField(`I was started the ${botStartedDay}:${botStartedMonth}:${botStartedYear} at ${botStartedHour}:${botStartedMinute}:${botStartedSecond}:${botStartedMillisecond} !`)
-	
-	msg.channel({"name": "📰ayzefrbot-logs",
-"id": ""}).send(botReadEmbed)
-	
 });
 
-bot.on("guildMemberAdd", () => {
-	
-	console.log(`The user ${user.name} joined the discord server ${guild.name} the ${Date.getDay}:${Date.getMonth}:${Date.getYear} at ${Date.getHour}:${Date.getMinute}:${Date.getSecond}:${Date.getMillisecond} !`)
-	msg.channel.send(`The user ${user.name} joined the server !\nWe are now ${guild.members.memberCount} members.`)
-	
-});
 
 bot.on("message", msg => {
-	
-	if (msg.content === botPrefix +"help") {
-		
-		msg.channel.send(helpMessageEmbed)
-		
-	}
-	
-	if (msg.content === botPrefix +"helppm") {
-		
-		msg.member.send(helpPmEmbed)
-		
-	}
-	
-	if (msg.content === botPrefix +"stafflist") {
-		
-		msg.channel.send(staffListEmbed)
-		
-	}
-	
-	if (msg.content === botPrefix +"stafflistpm") {
-		
-		msg.channel.send(staffListPmEmbed)
-		
-	}
-	
+
+    if (msg.content === botPrefix +"help") {
+
+        if (msg.author === "bot") {
+
+            msg.channel.send("You can't use this command because you are a bot !")
+
+        } else {
+
+            var helpPageEmbed = new Discord.MessageEmbed();
+                helpPageEmbed.setColor("#0093FF")
+                helpPageEmbed.setTitle("**Help Page :**")
+                helpPageEmbed.addField("Hi, for the moment i don't get a help page because im a little big laggy ( my librarie discord.js is a little bit laggy ), but my fondator ( AyzeFR#4168 ) will add it soon !")
+
+            msg.channel.send(helpPageEmbed)
+
+            console.log(`The user ${msg.author.tag} ( ${msg.author.id} ) requested the help page !`)
+            fs.writeFile("./logs.txt", "utf-8", `The user ${msg.author.tag} ( ${msg.author.id} ) requested the help page !`)
+
+        }
+
+    }
+
+    if (msg.content === botPrefix +"clearconsole") {
+
+        if (msg.author.id === "533016846031650826") {
+
+            console.clear();
+            console.log("The console have been cleared !")
+
+            msg.channel.send("The console messages are been cleared !")
+            fs.writeFile("./logs.txt", "utf-8", `The console was been cleared`)
+
+        } else {
+
+            msg.channel.send("You can't use this command because you are not my fondator, i sended a pm to AyzeFR.")
+            fs.writeFile("./logs.txt", "utf-8", `${msg.author.tag} ( ${msg.author.id} ) tried to use the clearconsole command.`)
+
+        }
+
+    }
+
+    // admin commands
+
 });
 
-bot.login(botToken);
+
+bot.login("Njg4NzI3ODI5MDQ2NjI0MjYx.Xm4hxg.hFfGTZYyO4uZRPg7mvuDPFeIqbA");
